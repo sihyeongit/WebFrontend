@@ -13,6 +13,7 @@ function App(){
       alignItems :"center"
       }}>
         <h2>git test</h2>
+        ㅏㅇ오라ㅓ오러
       <h2>{massage}</h2>
       <h1>프로필</h1>
       <h1>이름 : {name}</h1>
