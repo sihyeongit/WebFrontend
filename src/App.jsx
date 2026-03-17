@@ -12,6 +12,7 @@ function App(){
       margin : "0px",
       alignItems :"center"
       }}>
+        <h2>git test</h2>
       <h2>{massage}</h2>
       <h1>프로필</h1>
       <h1>이름 : {name}</h1>
