@@ -1,121 +1,132 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+//실습1
+// function Hello(){
+//   return <h1>안녕하세요 REACT</h1>
+// }
+// export default Hello;
 
-function App() {
-  const [count, setCount] = useState(0)
+//실습2
+// function User({name}){
+//   return (
+//     <h1>이름 : {name}</h1>
+//   );
+// }
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+// function App(){
+//   return(
+//     <div>
+//       <User name="이시현"/>
+//       <User name="김시현"/>
+//     </div>
+//   );
+// }
+// export default App;
 
-      <div className="ticks"></div>
+//실습3
+// function Product({pro,price}){
+//   return <h1>상품 : {pro} / 가격 : {price}만원</h1>;
+// }
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+// function App(){
+//   return(
+//     <div>
+//       <Product pro="노트북" price={100}/> //숫자형식할때 {}사용
+//       <Product pro="키보드" price={5}/>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+//     </div>
+//   );
+// }
+// export default App;
+
+
+//실습4
+// function ProfileCard({name,age,job}){
+//   return(
+//     <div>
+//       <h2>이름: {name}</h2>
+//       <h2>나이: {age}</h2>
+//       <h2>직업: {job}</h2>
+//     </div>
+//   );
+// }
+
+// function App(){
+//   return(
+//     <div>
+//       <ProfileCard name="김민지" age={20} job="학생"/>
+//       <ProfileCard name="이시현" age={20} job="대학생"/>
+//       <ProfileCard name="안녕하" age={20} job="반갑습"/>
+      
+//     </div>
+//   );
+// }
+// export default App;
+
+//실습5
+// function Button({text}){
+// return(
+//     <button>{text}</button>
+//   );
+// }
+
+// function App(){
+//   return(
+//     <div>
+//       <h1>4주차 실습</h1>
+//       <hr />
+//       <Button text="로그인"/>
+//       <Button text="회원가입"/>
+//       <Button text="삭제"/>
+//     </div>
+//   );
+// }
+// export default App;
+
+
+//실습6
+// function Box({children}){
+//   return(
+//     <div>
+//       {children}
+//     </div>
+//   );
+// }
+
+// function App(){
+//   return(
+//     <div>
+//       <Box>
+//         <h1>안녕하세요</h1>
+//         <h1>안녕하세요!!!</h1>
+//       </Box>
+//     </div>
+//   );
+// }
+// export default App;
+
+
+//실습7
+// 자식 컴포넌트
+function FruitList({ fruits }) {
+  return(
+    <ul>
+      {/* map을 활용하여 배열 요소를 li 태그로 반환 */}
+      {fruits.map((fruit, index) => (
+        <li key={index}>{fruit}</li>
+      ))}
+    </ul>
+  );
 }
 
-export default App
+// 부모 컴포넌트
+function App() {
+  const fruits = ["사과", "바나나", "포도"];
+  
+  return(
+    <div>
+      {/* fruits 속성으로 배열 데이터를 정확히 전달 */}
+      <FruitList fruits={fruits} />
+    </div>
+  );
+}
+
+export default App;
