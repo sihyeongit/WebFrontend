@@ -232,8 +232,8 @@
 //====================================================================================
 
 
-//실습과제4
-function VideoCard({title, channel, views}){
+//버튼 만들기
+/* function VideoCard({title, channel, views}){
   return(
     <div>
       <h3>{title}</h3>
@@ -279,4 +279,6 @@ function App(){
   );
 }
 
-export default App;
+export default App; */
+
+
